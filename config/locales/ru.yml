@@ -14,6 +14,13 @@ ru:
       destroyed: 'Вы удалили мероприятие :('
     users:
       updated: 'Пользователь успешно обновлен.'
+    comments:
+      destroyed: 'Комментарий успешно удален'
+      created: 'Ваш комментарий добавлен'
+      error: 'Неизвестная ошибка с коментарием'
+  comments:
+    comment:
+      destroy_confirm: 'Вы уверены, что хотите удалить этот коментарий?'
   activerecord:
     models:
       user: 'Пользователь'
