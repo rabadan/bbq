@@ -1,0 +1,29 @@
+ru:
+  app:
+    name: 'Шашлыки'
+    company: 'rabadan731'
+  errors:
+    count:
+      error:
+        one: "В вашей форме %{count} ошибка"
+        few: "В вашей форме %{count} ошибки"
+        many: "В вашей форме %{count} ошибок"
+  controllers:
+    events:
+      created: 'Вы создали новое мероприятие'
+      updated: 'Вы обновили мероприятие'
+      destroyed: 'Вы удалили мероприятие :('
+    users:
+      updated: 'Пользователь успешно обновлен.'
+  activerecord:
+    models:
+      user: 'Пользователь'
+      event: 'Событие'
+    attributes:
+      user:
+        name: "Имя пользователя"
+      event:
+        title: "Заголовок"
+        address: "Адресс"
+        datetime: "Время проведения"
+        description: "Подробнее о событие"

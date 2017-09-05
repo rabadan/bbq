@@ -3,7 +3,7 @@
     <div class="panel panel-default buffer-both">
       <div class="panel-heading">
         <h2 class="panel_title">
-          <strong>Регистрация</strong>
+          <strong><%= t('.sign_up') %></strong>
         </h2>
       </div>
       <div class="panel-body">
@@ -17,9 +17,6 @@
 
             <div class="form-group">
               <%= f.label :password %>
-              <% if @minimum_password_length %>
-                  <em>(<%= @minimum_password_length %> characters minimum)</em>
-              <% end %><br/>
               <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
             </div>
 
@@ -29,7 +26,7 @@
             </div>
 
             <div class="actions">
-              <%= f.submit "Sign up", class: 'btn btn-primary' %>
+              <%= f.submit t('.sign_up'), class: 'btn btn-primary' %>
             </div>
         <% end %>
       </div>

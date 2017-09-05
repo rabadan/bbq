@@ -8,6 +8,8 @@ end
 gem 'rails', '~> 5.1.2'
 gem 'uglifier', '>= 1.3.0'
 gem 'devise'
+gem 'rails-i18n'
+gem 'devise-i18n'
 
 gem 'therubyracer'
 gem 'less-rails'

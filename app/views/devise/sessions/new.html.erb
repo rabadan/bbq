@@ -3,7 +3,7 @@
     <div class="panel panel-default buffer-both">
       <div class="panel-heading">
         <h2 class="panel_title">
-          <strong>Вход в систему</strong>
+          <strong><%= t('.sign_in') %></strong>
         </h2>
       </div>
       <div class="panel-body">
@@ -28,7 +28,7 @@
             <% end -%>
 
             <div class="actions">
-              <%= f.submit "Log in", class: 'btn btn-primary' %>
+              <%= f.submit t('.sign_in'), class: 'btn btn-primary' %>
             </div>
         <% end %>
       </div>
