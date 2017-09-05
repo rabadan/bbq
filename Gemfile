@@ -11,7 +11,6 @@ gem 'devise'
 gem 'rails-i18n'
 gem 'devise-i18n'
 
-gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
 
 gem 'jquery-rails'
