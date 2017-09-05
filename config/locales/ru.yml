@@ -18,6 +18,10 @@ ru:
       destroyed: 'Комментарий успешно удален'
       created: 'Ваш комментарий добавлен'
       error: 'Неизвестная ошибка с коментарием'
+    subscriptions:
+      created: 'Вы подписаны на это событие'
+      destroyed: 'Участник отписан'
+      error: 'Подписка/отписка не сработала'
   comments:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот коментарий?'
@@ -33,3 +37,6 @@ ru:
         address: "Адресс"
         datetime: "Время проведения"
         description: "Подробнее о событие"
+  subscriptions:
+    subscription:
+      destroy_confirm: "Вы уверены, что хотите удалить эту подписку?"

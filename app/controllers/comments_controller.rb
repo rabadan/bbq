@@ -33,17 +33,17 @@ class CommentsController < ApplicationController
   end
 
   private
-    def set_event
-      @event = Event.find(params[:event_id])
-    end
+  def set_event
+    @event = Event.find(params[:event_id])
+  end
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_comment
-      @comment = @event.comments.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_comment
+    @comment = @event.comments.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def comment_params
-      params.require(:comment).permit(:body, :user_name)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def comment_params
+    params.require(:comment).permit(:body, :user_name)
+  end
 end

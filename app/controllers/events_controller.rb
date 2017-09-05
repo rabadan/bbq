@@ -10,6 +10,8 @@ class EventsController < ApplicationController
 
   # GET /events/1
   def show
+    @new_comment = @event.comments.build(params[:comment])
+    @new_subscription = @event.subscriptions.build(params[:subscription])
   end
 
   # GET /events/new
@@ -48,15 +50,15 @@ class EventsController < ApplicationController
   end
 
   private
-    def set_current_user_event
-      @event = current_user.events.find(params[:id])
-    end
+  def set_current_user_event
+    @event = current_user.events.find(params[:id])
+  end
 
-    def set_event
-      @event = Event.find(params[:id])
-    end
+  def set_event
+    @event = Event.find(params[:id])
+  end
 
-    def event_params
-      params.require(:event).permit(:title, :address, :datetime, :description)
-    end
+  def event_params
+    params.require(:event).permit(:title, :address, :datetime, :description)
+  end
 end
