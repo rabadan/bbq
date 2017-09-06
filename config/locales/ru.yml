@@ -37,6 +37,12 @@ ru:
         address: "Адресс"
         datetime: "Время проведения"
         description: "Подробнее о событие"
+      comment:
+        body: "Текст сообщения"
+        user_name: "Ваше имя"
+      subscription:
+        user_name: "Ваше имя"
+        user_email: "Ваш email"
   subscriptions:
     subscription:
       mail_existing_user: "Пользователь с таким эмайл зарегистрирован в системе. Залогинитесь пожалуйста!"
