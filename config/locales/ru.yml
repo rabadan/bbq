@@ -39,4 +39,5 @@ ru:
         description: "Подробнее о событие"
   subscriptions:
     subscription:
+      mail_existing_user: "Пользователь с таким эмайл зарегистрирован в системе. Залогинитесь пожалуйста!"
       destroy_confirm: "Вы уверены, что хотите удалить эту подписку?"
