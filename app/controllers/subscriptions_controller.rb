@@ -4,6 +4,11 @@ class SubscriptionsController < ApplicationController
 
   # POST /subscriptions
   def create
+    # Если юзер залогинен и он автор события - то не даем ему подписаться
+    if current_user.present? && @event.user == current_user
+      return redirect_to @event, alert: t('controllers.subscriptions.error')
+    end
+
     @new_subscription = @event.subscriptions.build(subscription_params)
     @new_subscription.user = current_user
 
