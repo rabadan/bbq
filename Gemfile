@@ -18,6 +18,8 @@ gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'coffee-rails', '~> 4.2'
 
+gem 'carrierwave', '~> 1.0'
+gem 'rmagick'
 
 group :development, :test do
   gem 'sqlite3'
