@@ -34,9 +34,11 @@
           <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
         </div>
 
-        <div class="event-photo-form">
-          <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
-        </div>
+        <% if current_user.present? %>
+          <div class="event-photo-form">
+            <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
+          </div>
+        <% end %>
       </div>
 
       <div class="event-comments buffer-top">
@@ -62,7 +64,7 @@
           </p>
         </div>
       </div>
-      <% if @event.user != current_user %>
+      <% if (@event.user != current_user) && (current_user.present? && !@event.subscriptions.map(&:user).include?(current_user)) %>
         <div class="event-subscription-form">
           <h4>Я пойду:</h4>
           <div>
