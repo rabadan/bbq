@@ -51,6 +51,11 @@ class CommentsController < ApplicationController
   def notify_subscribers(event, comment)
     all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
 
+    # 1. Автор комментария не должен получать уведомление о своем собственном комментарии.
+    # 2. Если зарегистрированный пользователь оставляет комментарий в событии,
+    # на которое подписан, он не должен получить письма о своем комментарии.
+    all_emails.delete(comment.user.email) if comment.user.present?
+
     all_emails.each do |mail|
       EventMailer.comment(event, comment, mail).deliver_now
     end
