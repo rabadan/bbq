@@ -1,5 +1,10 @@
-<div class="event-photo buffer-both">
-  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url %>
-
-  Добавил <%= render partial: 'users/user', object: photo.user %>
+<div class="event-photo">
+  <%= link_to image_tag(photo.photo.thumb.url, class: 'example-image'),
+    photo.photo.url,
+    data: {
+      toggle: 'lightbox',
+      gallery: "event-#{photo.event.id}",
+      title: "Добавил #{render partial: 'users/user', object: photo.user}"
+    },
+    class: 'example-image-link' %>
 </div>

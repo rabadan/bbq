@@ -49,3 +49,13 @@
   width: 100%;
   height: 400px;
 }
+
+.subscription .short-width {
+    width: 35px;
+    text-align: center;
+}
+
+.event-photo {
+    float: left;
+    padding: 5px;
+}

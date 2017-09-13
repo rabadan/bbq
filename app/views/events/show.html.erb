@@ -2,8 +2,8 @@
   <div class="event-info row">
     <div class="col-md-12">
       <%= content_tag 'div', '',
-        class: 'event-background',
-        style: "background-image: url(#{event_photo(@event)})"
+                      class: 'event-background',
+                      style: "background-image: url(#{event_photo(@event)})"
       %>
 
       <div class="event-info-inner row">
@@ -11,70 +11,121 @@
           <div class="event-description">
             <h1><%= @event.title %></h1>
             <h3><%= l @event.datetime, format: :short %></h3>
-            <h3><small><%= link_to @event.address,
-                                   "https://yandex.ru/maps/?text=#{@event.address}" %></small></h3>
+            <h3>
+              <small><%= link_to @event.address,
+                                 "https://yandex.ru/maps/?text=#{@event.address}" %></small>
+            </h3>
             <p><%= @event.description %></p>
           </div>
 
-          <% if(current_user_can_edit?(@event)) %>
-            <div class="buffer-top">
-              <%= link_to 'Изменить', edit_event_path(@event), class: 'btn btn-primary' %>
-              <%= link_to 'Удалить', event_path(@event), method: :delete, class: 'btn btn-danger',  data: { confirm: 'Вы точно хотите удалить мероприятие?' } %>
-            </div>
+          <% if (current_user_can_edit?(@event)) %>
+              <div class="buffer-top">
+                <%= link_to 'Изменить', edit_event_path(@event), class: 'btn btn-primary' %>
+                <%= link_to 'Удалить', event_path(@event), method: :delete, class: 'btn btn-danger', data: {confirm: 'Вы точно хотите удалить мероприятие?'} %>
+              </div>
           <% end %>
+          <br/>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-8">
-      <div class="event-photos">
-        <div class="event-photos-gallery">
-          <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
-        </div>
 
-        <% if current_user.present? %>
-          <div class="event-photo-form">
-            <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
+  <div>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active">
+        <a href="#tab-comments" aria-controls="home" role="tab" data-toggle="tab">
+          Обсуждение
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#tab-photos" aria-controls="messages" role="tab" data-toggle="tab">
+          Фотографии
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#tab-subscriptions" aria-controls="profile" role="tab" data-toggle="tab">
+          Кто идёт?
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#tab-map" aria-controls="settings" role="tab" data-toggle="tab">
+          Местоположение
+        </a>
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="tab-comments">
+        <div class="event-comments buffer-top">
+          <div class="buffer-both">
+            <%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment) %>
           </div>
+          <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="tab-subscriptions">
+        <div class="event-owner">
+          <h4>Зовет:</h4>
+          <p><%= render partial: 'users/user', object: @event.user %></p>
+        </div>
+        <div class="event-subscriptions">
+          <div>
+            <% if @event.subscriptions.except(@new_subscription).count == 0 %>
+              <p>Пока еще никто не подписан на мероприятие...</p>
+            <% else %>
+              <h4>Пойдут:</h4>
+              <table class="table table-bordered">
+                <%= render partial: 'subscriptions/subscription',
+                           collection: @event.subscriptions.except(@new_subscription) %>
+              </table>
+            <% end %>
+          </div>
+        </div>
+        <% if (@event.user != current_user) && (current_user.present? && !@event.subscriptions.map(&:user).include?(current_user)) %>
+            <div class="event-subscription-form">
+              <h4>Я пойду:</h4>
+              <div>
+                <%= render partial: 'subscriptions/form', locals: {
+                    subscription: @new_subscription || @event.subscriptions.build
+                } %>
+              </div>
+            </div>
         <% end %>
       </div>
-
-      <div class="event-comments buffer-top">
-
-        <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
-
-        <div class="buffer-both">
-          <%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment) %>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="event-owner">
-        <h4>Зовет:</h4>
-        <p><%= render partial: 'users/user', object: @event.user %></p>
-      </div>
-      <div class="event-subscriptions">
-        <h4>Пойдут:</h4>
-        <div>
-          <p>
-            <%= render partial: 'subscriptions/subscription',
-                       collection: @event.subscriptions.except(@new_subscription) %>
-          </p>
-        </div>
-      </div>
-      <% if (@event.user != current_user) && (current_user.present? && !@event.subscriptions.map(&:user).include?(current_user)) %>
-        <div class="event-subscription-form">
-          <h4>Я пойду:</h4>
-          <div>
-            <%= render partial: 'subscriptions/form', locals: {
-                subscription: @new_subscription || @event.subscriptions.build
-            } %>
+      <div role="tabpanel" class="tab-pane" id="tab-photos">
+        <div class="event-photos">
+          <div class="row buffer-top">
+            <div class="col-md-9">
+              <div class="event-photos-gallery">
+                <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <% if current_user.present? %>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      Добавить фотографию
+                    </div>
+                    <div class="panel-body">
+                      <div class="event-photo-form">
+                        <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
+                      </div>
+                    </div>
+                  </div>
+              <% end %>
+            </div>
           </div>
         </div>
-      <% end %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="tab-map">
+        <div id="map" data-address="<%= @event.address %>" class="event-map"></div>
+      </div>
     </div>
   </div>
-
 </div>
+
+

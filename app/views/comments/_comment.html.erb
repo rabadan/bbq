@@ -1,6 +1,5 @@
-<div class="buffer-top">
-  <p><%= comment.body %></p>
-  <p>
+<div class="panel panel-default">
+  <div class="panel-heading">
     <span>
       <% if comment.user.present? %>
         <%= render partial: 'users/user', object: comment.user %>
@@ -8,12 +7,21 @@
           <em><strong><%= comment.user_name %></strong></em>
       <% end %>
     </span>
-    <em><%= l comment.created_at, format: :short %></em>
     <% if current_user_can_edit?(comment) %>
-      <%= link_to(
-        fa_icon('trash'), event_comment_path(comment.event, comment),
-        method: :delete, data: {confirm: t('.destroy_confirm')}
-      ) %>
+        <%= link_to(
+                fa_icon('trash'),
+                event_comment_path(comment.event, comment),
+                method: :delete,
+                data: {confirm: t('.destroy_confirm')},
+                class: 'pull-right'
+            ) %>
     <% end %>
-  </p>
+    <em class="pull-right">
+      <%= l comment.created_at, format: :short %>
+      &nbsp;
+    </em>
+  </div>
+  <div class="panel-body">
+    <%= comment.body %>
+  </div>
 </div>
