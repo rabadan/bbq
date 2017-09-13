@@ -12,6 +12,7 @@ ru:
       created: 'Вы создали новое мероприятие'
       updated: 'Вы обновили мероприятие'
       destroyed: 'Вы удалили мероприятие :('
+      wrong_pincode: 'Неверный пинкод!'
     users:
       updated: 'Пользователь успешно обновлен.'
     comments:
@@ -46,6 +47,7 @@ ru:
         address: "Адресс"
         datetime: "Время проведения"
         description: "Подробнее о событие"
+        pincode: 'Пинкод доступа'
       comment:
         body: "Текст сообщения"
         user_name: "Ваше имя"
