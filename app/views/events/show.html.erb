@@ -85,7 +85,7 @@
             <% end %>
           </div>
         </div>
-        <% if (@event.user != current_user) && (current_user.present? && !@event.subscriptions.map(&:user).include?(current_user)) %>
+        <% if can_subscribe_event? %>
             <div class="event-subscription-form">
               <h4>Я пойду:</h4>
               <div>
