@@ -17,7 +17,7 @@
 
             <div class="form-group">
               <%= f.label :password %><br />
-              <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+              <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
             </div>
 
             <% if devise_mapping.rememberable? -%>
@@ -33,7 +33,7 @@
         <% end %>
       </div>
       <div class="panel-footer">
-        <%= render "devise/shared/links" %>
+        <%= render 'devise/shared/links' %>
       </div>
     </div>
   </div>

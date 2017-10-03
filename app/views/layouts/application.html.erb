@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Bbq" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : 'Bbq' %></title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag 'application', :media => 'all' %>
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -29,9 +29,9 @@
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag '/favicon.ico', :rel => 'shortcut icon' %>
 
-    <%= javascript_include_tag "//api-maps.yandex.ru/2.1/?lang=ru_RU" %>
-    <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/4.0.1/ekko-lightbox.min.js" %>
+    <%= javascript_include_tag '//api-maps.yandex.ru/2.1/?lang=ru_RU' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/4.0.1/ekko-lightbox.min.js' %>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -47,7 +47,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <%= link_to t("app.name"), root_path, class: 'navbar-brand' %>
+        <%= link_to t('app.name'), root_path, class: 'navbar-brand' %>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <% if user_signed_in? %>
@@ -74,7 +74,7 @@
       </div><!--/row-->
 
       <footer>
-        <p>&copy; <%= t "app.company" %> 2017</p>
+        <p>&copy; <%= t 'app.company' %> 2017</p>
       </footer>
 
     </div> <!-- /container -->

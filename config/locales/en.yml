@@ -31,3 +31,84 @@
 
 en:
   hello: "Hello world"
+  comments:
+    comment:
+      destroy_confirm: ""
+  errors:
+    count: "count"
+  subscriptions:
+    subscription:
+      destroy_confirm: ""
+      mail_existing_user: ""
+  app:
+    company: ""
+    name: ""
+  event_mailer:
+    comment:
+      owner: ""
+      datetime: ""
+      event: ""
+      author: ""
+      title: ""
+    photo:
+      owner: ""
+      datetime: ""
+      event: ""
+      author: ""
+      title: ""
+    subscription:
+      owner: ""
+      author: ""
+      event: ""
+      email: ""
+      name: ""
+      title: ""
+  controllers:
+    comments:
+      error: ""
+      destroyed: ""
+      created: ""
+    events:
+      wrong_pincode: ""
+      destroyed: ""
+      updated: ""
+      created: ""
+    photos:
+      error: ""
+      destroyed: ""
+      created: ""
+    subscriptions:
+      error: ""
+      destroyed: ""
+      created: ""
+    users:
+      updated: ""
+  devise:
+    registrations:
+      edit:
+        are_you_sure: ""
+        cancel_my_account: ""
+        unhappy: ""
+        update: ""
+        we_need_your_current_password_to_confirm_your_changes: ""
+        currently_waiting_confirmation_for_email: ""
+        title: ""
+      new:
+        sign_up: ""
+    shared:
+      links:
+        back: ""
+    passwords:
+      new:
+        send_me_reset_password_instructions: ""
+        forgot_your_password: ""
+    sessions:
+      new:
+        sign_in: ""
+    mailer:
+      reset_password_instructions:
+        instruction_3: ""
+        instruction_2: ""
+        action: ""
+        instruction: ""
+        greeting: ""
