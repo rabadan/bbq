@@ -17,7 +17,7 @@ gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'coffee-rails', '~> 4.2'
-
+gem 'simple_form'
 gem 'carrierwave', '~> 1.0'
 gem 'rmagick'
 gem 'fog-aws'
