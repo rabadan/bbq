@@ -24,7 +24,11 @@ RSpec.configure do |config|
 
   config.filter_rails_from_backtrace!
 
-  config.include Devise::TestHelpers, type: :controller
-  config.include Devise::TestHelpers, type: :view
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
   config.include Warden::Test::Helpers, type: :feature
+end
+
+def current_user_can_edit?(user)
+  true
 end
