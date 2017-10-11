@@ -1,24 +1,46 @@
-# README
+# Приложение "Шашлыки"
+#### Приложение, в котором можно спланировать совместные мероприятия
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Проект реализован на Ruby on Rails 5.1
 
-Things you may want to cover:
+#### Demo
+http://bbq.rabadan.ru
 
-* Ruby version
+### Установка приложения:
+```ssh
+git clone git@github.com:rabadan/bbq.git bbq
+cd bbq
+bundle install
+bundle exec rake db:migrate
+```
 
-* System dependencies
+### установка ENV key вашего environments
+#### SENDGRID
+Если вы деплоите на heroku - используйте Add-ons sendgrid
 
-* Configuration
+Или получите ключи на http://sendgrid.com
+```
+SENDGRID_USERNAME = <sendgrid username>
+SENDGRID_PASSWORD = <sendgrid password>
+SENDGRID_DOMAIN = <your domain>
+```
 
-* Database creation
+#### AMAZON S3
+Получить ключи можно тут: https://aws.amazon.com/
+```
+S3_ACCESS_KEY = <amazon s3 access key>
+S3_BUCKET_NAME = <amazon s3 bucket name>
+S3_SECRET_KEY = <amazon s3 secret key>
+S3_REGION = <s3 region> (example: us-east-2)
+```
 
-* Database initialization
 
-* How to run the test suite
+### Запуск сервера
+```ssh
+bundle exec rails s -b 0.0.0.0 -p 3000
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Автор
+[Rabadan Akagasanov](http://rabadan.ru)
+ 
+For all questions and suggestions please contact: rabadan731@yandex.ru
