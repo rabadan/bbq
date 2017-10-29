@@ -7,7 +7,7 @@ Rails.application.configure do
   config.cache_classes = false
 
   # QUEUE=bbq* bundle exec rake environment resque:work
-  config.active_job.queue_adapter = :resque
+  config.active_job.queue_adapter = :async
   config.active_job.queue_name_prefix = "bbq_#{Rails.env}"
 
   # Do not eager load code on boot.

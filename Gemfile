@@ -41,6 +41,7 @@ group :development do
   gem 'capistrano-passenger', '~> 0.2'
   gem 'capistrano-rbenv', '~> 2.1'
   gem 'capistrano-bundler', '~> 1.3'
+  gem 'capistrano-resque', '~> 0.2.2', require: false
 
   gem 'letter_opener'
   gem 'web-console', '>= 3.3.0'
