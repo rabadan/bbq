@@ -24,6 +24,8 @@ gem 'carrierwave', '~> 1.0'
 gem 'rmagick'
 gem 'fog-aws'
 
+gem 'puma', '~> 3.7'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
