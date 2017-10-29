@@ -32,6 +32,13 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano', '~> 3.9'
+  gem 'capistrano-rails', '~> 1.3'
+  gem 'capistrano-passenger', '~> 0.2'
+  gem 'capistrano-rbenv', '~> 2.1'
+  gem 'capistrano-bundler', '~> 1.3'
+
+  gem 'letter_opener'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
