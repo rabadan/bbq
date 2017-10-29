@@ -95,6 +95,6 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :sendmail
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = {host: 'r-effect.com'}
+  config.action_mailer.default_url_options = {host: 'bbq.r-effect.com'}
   config.action_mailer.raise_delivery_errors = false
 end
