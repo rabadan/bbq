@@ -8,6 +8,8 @@ end
 gem 'rails', '~> 5.1.2'
 gem 'rails-i18n'
 
+gem 'resque', '~> 1.27'
+
 gem 'uglifier', '>= 1.3.0'
 
 gem 'devise'
@@ -43,6 +45,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'letter_opener'
 end
 
 group :production do
