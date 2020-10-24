@@ -1,12 +1,11 @@
 source 'https://rubygems.org'
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
-  "https://github.com/#{repo_name}.git"
-end
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'rails', '~> 5.1.2'
-gem 'rails-i18n'
+ruby '2.6.6'
+
+gem 'rails', '~> 5.2.4'
+gem 'rails-i18n', '~> 5.1'
 
 gem 'resque', '~> 1.27'
 
@@ -15,14 +14,14 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 gem 'devise-i18n'
 
-gem 'twitter-bootstrap-rails'
-gem 'font-awesome-rails'
-gem 'jquery-rails'
+gem 'twitter-bootstrap-rails', '~> 4.0'
+gem 'font-awesome-rails', '~> 4.7'
+gem 'jquery-rails', '~> 4.3'
 gem 'coffee-rails', '~> 4.2'
 gem 'simple_form'
 gem 'carrierwave', '~> 1.0'
-gem 'rmagick'
-gem 'fog-aws'
+gem 'rmagick', '~> 2.16'
+gem 'fog-aws', '~> 1.4.1'
 
 gem 'puma', '~> 3.7'
 
@@ -31,7 +30,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   gem 'rspec-rails', '~> 3.4'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'shoulda-matchers'
 end
 

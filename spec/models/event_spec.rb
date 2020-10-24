@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
-  let(:event) { FactoryGirl.create(:event) }
+  let(:event) { FactoryBot.create(:event) }
 
   describe "#visitors" do
     before(:each) do
-      FactoryGirl.create(:subscription, event: event)
-      FactoryGirl.create(:subscription_guest, event: event)
+      FactoryBot.create(:subscription, event: event)
+      FactoryBot.create(:subscription_guest, event: event)
     end
 
     it 'correct' do

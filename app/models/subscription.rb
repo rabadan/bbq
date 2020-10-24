@@ -4,13 +4,13 @@ class Subscription < ApplicationRecord
 
   validates :event, presence: true
 
-  validates :user, uniqueness: { scope: :event_id }, if: 'user.present?'
+  validates :user, uniqueness: { scope: :event_id }, if: proc { |user| user.present? }
 
-  validates :user_name, presence: true, unless: 'user.present?'
+  validates :user_name, presence: true, unless: proc { |user| user.present? }
 
-  validates :user_email, presence: true, format: { with: /\A[a-z\d\-_.]+@[a-z\d\-_.]+\z/i }, unless: 'user.present?'
-  validates :user_email, uniqueness: { scope: :event_id }, unless: 'user.present?'
-  validate :email_of_user, unless: 'user.present?'
+  validates :user_email, presence: true, format: { with: /\A[a-z\d\-_.]+@[a-z\d\-_.]+\z/i }, unless: proc { |user| user.present? }
+  validates :user_email, uniqueness: { scope: :event_id }, unless: proc { |user| user.present? }
+  validate :email_of_user, unless: proc { |user| user.present? }
 
   def user_name
     if user.present?

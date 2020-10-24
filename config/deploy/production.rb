@@ -7,7 +7,7 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-server "bbq.r-effect.com", user: "deploy", roles: %w{app db web}
+server "home.rabadan.ru", user: "deploy", roles: %w{app db web}
 
 # При запуске resque воркера загружать Rails приложение
 # set :resque_environment_task, true

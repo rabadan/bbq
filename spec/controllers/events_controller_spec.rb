@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe EventsController, type: :controller do
-  let(:user) { FactoryGirl.create(:user) }
-  let(:event) { FactoryGirl.create(:event, user: user) }
+  let(:user) { FactoryBot.create(:user) }
+  let(:event) { FactoryBot.create(:event, user: user) }
 
   let(:valid_attributes) do
     {

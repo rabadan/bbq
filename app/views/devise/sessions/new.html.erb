@@ -13,7 +13,7 @@
             <%= f.input :password %>
 
             <% if devise_mapping.rememberable? -%>
-              <%= f.input :remember_me %>
+              <%= f.input :remember_me, as: :boolean %>
             <% end -%>
 
             <div class="actions">
