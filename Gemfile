@@ -19,7 +19,7 @@ gem 'font-awesome-rails', '~> 4.7'
 gem 'jquery-rails', '~> 4.3'
 gem 'coffee-rails', '~> 4.2'
 gem 'simple_form'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'rmagick', '~> 2.16'
 gem 'fog-aws', '~> 1.4.1'
 
