@@ -23,7 +23,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'rmagick', '~> 2.16'
 gem 'fog-aws', '~> 1.4.1'
 
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 4.3'
 
 group :development, :test do
   gem 'sqlite3'
